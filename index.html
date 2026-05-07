@@ -1660,23 +1660,59 @@ function parseMath(s) {
   s = s.replace(/!=/g, '≠');
   s = s.replace(/\+-/g, '±');
 
-  // 3. Akar — sqrt[n](expr) → ⁿ√expr
-  const nthRoots = {'2':'√','3':'∛','4':'∜'};
-  s = s.replace(/sqrt\[(\d+)\]\(([^)]+)\)/g, (_, n, expr) => {
-    const sym = nthRoots[n] || (n + '√');
-    return '<span class="math-root">' + sym + '<span class="math-root-inner">' + expr + '</span></span>';
-  });
-  // sqrt(expr) → √expr
-  s = s.replace(/sqrt\(([^)]+)\)/g, (_, expr) =>
-    '<span class="math-root">√<span class="math-root-inner">' + expr + '</span></span>'
-  );
+  // 3. Pangkat DULU — sebelum sqrt, supaya isi sqrt ikut diproses
+  // base^(expr) — mis: (x-4)^2, x^(n+1)
+  s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%\)]+)\^\(([^)]+)\)/g,
+    (_, base, exp) => base + '<sup>' + exp + '</sup>');
+  // base^exp — mis: x^2, 10^6
+  s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%\)]+)\^([a-zA-Z0-9\+\-\.]+)/g,
+    (_, base, exp) => base + '<sup>' + exp + '</sup>');
 
-  // 4. Pangkat — base^(expr) dan base^exp
-  // base bisa: angka, variabel, kurung tutup, atau tanda persen
-  s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%}\)]+)\^\(([^)]+)\)/g,
-    (_, base, exp) => base + '<sup>' + exp + '</sup>');
-  s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%}\)]+)\^([a-zA-Z0-9\+\-\.]+)/g,
-    (_, base, exp) => base + '<sup>' + exp + '</sup>');
+  // 4. Akar — SETELAH pangkat, sehingga isi sqrt sudah berisi <sup> yang benar
+  // Helper: ambil isi paling-dalam dari sqrt(...) dengan balancing kurung
+  function extractSqrtInner(str, startIdx) {
+    // startIdx = posisi '(' pertama setelah 'sqrt'
+    let depth = 0, i = startIdx, result = '';
+    for (; i < str.length; i++) {
+      if (str[i] === '(') { depth++; if (depth === 1) continue; }
+      else if (str[i] === ')') { depth--; if (depth === 0) break; }
+      if (depth > 0) result += str[i];
+    }
+    return { inner: result, end: i };
+  }
+
+  // sqrt[n](...) → ⁿ√...
+  const nthRoots = {'2':'√','3':'∛','4':'∜'};
+  s = s.replace(/sqrt\[(\d+)\]\(/g, (match, n, offset, full) => {
+    // Tandai posisi untuk diproses di bawah — pakai placeholder sementara
+    return '\x00SQRTN:' + n + '\x00';
+  });
+  // Proses placeholder sqrtn
+  s = s.replace(/\x00SQRTN:(\d+)\x00\(([^)]*(?:\([^)]*\)[^)]*)*)\)/g, (_, n, inner) => {
+    const sym = nthRoots[n] || (n + '√');
+    return '<span class="math-root">' + sym + '<span class="math-root-inner">' + inner + '</span></span>';
+  });
+  // Bersihkan sisa placeholder jika ada
+  s = s.replace(/\x00SQRTN:\d+\x00/g, '√');
+
+  // sqrt(...) dengan balancing kurung — tangani nested seperti sqrt((x-4)^2 + 16)
+  let out = '';
+  let i = 0;
+  while (i < s.length) {
+    const sqIdx = s.indexOf('sqrt(', i);
+    if (sqIdx === -1) { out += s.slice(i); break; }
+    out += s.slice(i, sqIdx);
+    // Temukan kurung penutup yang seimbang
+    let depth = 0, j = sqIdx + 4, inner = ''; // sqIdx+4 = posisi '('
+    for (; j < s.length; j++) {
+      if (s[j] === '(') { depth++; if (depth === 1) continue; }
+      else if (s[j] === ')') { depth--; if (depth === 0) break; }
+      if (depth > 0) inner += s[j];
+    }
+    out += '<span class="math-root">√<span class="math-root-inner">' + inner + '</span></span>';
+    i = j + 1;
+  }
+  s = out;
 
   // 5. Subscript — base_(expr) dan base_single
   s = s.replace(/([a-zA-Z0-9]+)_\(([^)]+)\)/g,
