@@ -41,6 +41,44 @@ body {
 }
 .hidden { display: none !important; }
 
+/* ═══════════════════════════════════════ MATH NOTATION */
+sup, sub {
+  font-size: 0.68em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup { top: -0.5em; color: inherit; }
+sub { bottom: -0.25em; color: inherit; }
+
+.math-root {
+  display: inline-flex;
+  align-items: baseline;
+  font-style: normal;
+}
+.math-root-inner {
+  display: inline-block;
+  border-top: 1.5px solid currentColor;
+  padding: 0 2px 0 1px;
+  margin-left: 1px;
+}
+.math-frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 0.85em;
+  line-height: 1.1;
+  margin: 0 2px;
+}
+.math-frac sup, .math-frac sub {
+  font-size: 1em;
+  position: static;
+  line-height: 1;
+}
+/* Pastikan teks soal & pilihan wrapping baik */
+.q-text, .opt-text { line-height: 1.8; }
+
 /* ═══════════════════════════════════════ SPLASH */
 #splash {
   position: fixed; inset: 0; z-index: 99999;
@@ -1583,9 +1621,76 @@ function esc(s) {
 
 // escHtml: dipakai di renderQuestion - aman untuk innerHTML
 function escHtml(s) {
-  return String(s || '')
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/\n/g,'<br>');
+  return parseMath(
+    String(s || '')
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/\n/g,'<br>')
+  );
+}
+
+/* ═════════════════════════════════════════════════════════
+   PARSE MATH — konversi notasi spreadsheet ke HTML
+   Didukung:
+     2^2          → 2²        (pangkat)
+     x^(n+1)      → x^(n+1)  (pangkat ekspresi)
+     sqrt(x)      → √x        (akar kuadrat)
+     sqrt[3](x)   → ∛x        (akar pangkat n)
+     x_2          → x₂        (subscript)
+     x_(n+1)      → x_(n+1)   (subscript ekspresi)
+     1/2          → ½          (pecahan — hanya bilangan tunggal)
+     pi           → π, theta → θ, alpha → α, beta → β, dst.
+═════════════════════════════════════════════════════════ */
+function parseMath(s) {
+  if (!s) return s;
+
+  // 1. Simbol Yunani
+  const greek = {
+    'alpha':'α','beta':'β','gamma':'γ','delta':'δ','epsilon':'ε',
+    'theta':'θ','lambda':'λ','mu':'μ','pi':'π','sigma':'σ',
+    'omega':'ω','phi':'φ','psi':'ψ','rho':'ρ','nu':'ν','eta':'η',
+    'tau':'τ','xi':'ξ','zeta':'ζ','Delta':'Δ','Sigma':'Σ','Omega':'Ω',
+    'Lambda':'Λ','Pi':'Π','Phi':'Φ','Gamma':'Γ','Theta':'Θ'
+  };
+  s = s.replace(/\b(alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|sigma|omega|phi|psi|rho|nu|eta|tau|xi|zeta|Delta|Sigma|Omega|Lambda|Pi|Phi|Gamma|Theta)\b/g,
+    (m) => greek[m] || m);
+
+  // 2. Simbol matematika umum
+  s = s.replace(/\binf(inity)?\b/gi, '∞');
+  s = s.replace(/<=/g, '≤').replace(/>=/g, '≥');
+  s = s.replace(/!=/g, '≠');
+  s = s.replace(/\+-/g, '±');
+
+  // 3. Akar — sqrt[n](expr) → ⁿ√expr
+  const nthRoots = {'2':'√','3':'∛','4':'∜'};
+  s = s.replace(/sqrt\[(\d+)\]\(([^)]+)\)/g, (_, n, expr) => {
+    const sym = nthRoots[n] || (n + '√');
+    return '<span class="math-root">' + sym + '<span class="math-root-inner">' + expr + '</span></span>';
+  });
+  // sqrt(expr) → √expr
+  s = s.replace(/sqrt\(([^)]+)\)/g, (_, expr) =>
+    '<span class="math-root">√<span class="math-root-inner">' + expr + '</span></span>'
+  );
+
+  // 4. Pangkat — base^(expr) dan base^exp
+  // base bisa: angka, variabel, kurung tutup, atau tanda persen
+  s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%}\)]+)\^\(([^)]+)\)/g,
+    (_, base, exp) => base + '<sup>' + exp + '</sup>');
+  s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%}\)]+)\^([a-zA-Z0-9\+\-\.]+)/g,
+    (_, base, exp) => base + '<sup>' + exp + '</sup>');
+
+  // 5. Subscript — base_(expr) dan base_single
+  s = s.replace(/([a-zA-Z0-9]+)_\(([^)]+)\)/g,
+    (_, base, sub) => base + '<sub>' + sub + '</sub>');
+  s = s.replace(/([a-zA-Z0-9]+)_([a-zA-Z0-9]+)/g,
+    (_, base, sub) => base + '<sub>' + sub + '</sub>');
+
+  // 6. Pecahan sederhana: angka/angka (bukan URL)
+  s = s.replace(/(?<![:/])\b(\d+)\/(\d+)\b(?![\d/])/g,
+    (_, num, den) =>
+      '<span class="math-frac"><sup>' + num + '</sup>⁄<sub>' + den + '</sub></span>'
+  );
+
+  return s;
 }
 </script>
 </body>
