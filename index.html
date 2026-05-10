@@ -76,7 +76,6 @@ sub { bottom: -0.25em; color: inherit; }
   position: static;
   line-height: 1;
 }
-/* Pastikan teks soal & pilihan wrapping baik */
 .q-text, .opt-text { line-height: 1.8; }
 
 /* ═══════════════════════════════════════ SPLASH */
@@ -318,7 +317,6 @@ sub { bottom: -0.25em; color: inherit; }
 
 .login-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px; box-shadow: var(--shadow); }
 
-/* Siswa info detail box */
 .siswa-detail {
   background: var(--success-soft); border: 1.5px solid var(--success);
   border-radius: var(--radius-sm); padding: 14px 16px; margin-top: 8px;
@@ -330,7 +328,6 @@ sub { bottom: -0.25em; color: inherit; }
 .siswa-detail-item .sd-label { font-size: 10px; font-weight: 800; color: var(--success); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
 .siswa-detail-item .sd-val   { font-size: 14px; font-weight: 700; color: var(--text); }
 
-/* Manual fallback */
 #manual-wrap {
   margin-top: 12px; background: var(--warn-soft); border: 1.5px solid #fbbf24;
   border-radius: var(--radius-sm); padding: 16px; display: none; animation: fadeSlideIn .3s ease;
@@ -347,7 +344,6 @@ sub { bottom: -0.25em; color: inherit; }
 }
 .manual-field input:focus { border-color: var(--warn); box-shadow: 0 0 0 3px rgba(217,119,6,.12); }
 
-/* Mapel info */
 .mapel-info-box {
   margin-top: 8px; background: var(--accent-soft); border: 1.5px solid var(--accent-mid);
   border-radius: var(--radius-sm); padding: 12px 16px; display: none; animation: fadeSlideIn .3s ease;
@@ -373,7 +369,6 @@ sub { bottom: -0.25em; color: inherit; }
   border: 1px solid rgba(37,99,235,0.4); white-space: nowrap;
 }
 
-/* Timer */
 .timer-bar {
   background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
   padding: 12px 20px; margin-bottom: 14px; display: flex; align-items: center; gap: 16px;
@@ -396,7 +391,6 @@ sub { bottom: -0.25em; color: inherit; }
 .options-blocker { pointer-events: none; opacity: .45; user-select: none; transition: opacity .4s; }
 .options-blocker .option-label { cursor: not-allowed !important; }
 
-/* Progress */
 .progress-wrap {
   background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
   padding: 14px 20px; margin-bottom: 14px; display: flex; align-items: center; gap: 16px;
@@ -405,7 +399,6 @@ sub { bottom: -0.25em; color: inherit; }
 .progress-fill  { height: 100%; background: var(--accent); border-radius: 99px; transition: width .4s cubic-bezier(.4,0,.2,1); }
 .progress-count { font-size: 13px; font-weight: 800; color: var(--accent); white-space: nowrap; }
 
-/* Palette toggle bar */
 .palette-toggle-bar {
   display: flex; align-items: center; justify-content: space-between;
   background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border);
@@ -419,7 +412,6 @@ sub { bottom: -0.25em; color: inherit; }
 .palette-toggle-icon { width: 30px; height: 30px; border-radius: 8px; background: var(--bg); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; transition: transform .3s, background .2s; flex-shrink: 0; }
 .palette-toggle-bar.open .palette-toggle-icon { transform: rotate(180deg); background: var(--accent-soft); border-color: var(--accent-mid); }
 
-/* Palette sheet overlay */
 #palette-overlay { position: fixed; inset: 0; background: rgba(15,18,33,.5); z-index: 8000; display: none; align-items: flex-end; justify-content: center; backdrop-filter: blur(2px); }
 #palette-overlay.show { display: flex; }
 .palette-sheet {
@@ -457,7 +449,6 @@ sub { bottom: -0.25em; color: inherit; }
 .q-num.current  { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .q-num.answered.current { background: var(--navy-light); border-color: var(--navy-light); color: #fff; }
 
-/* Soal card */
 .q-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 28px; margin-bottom: 18px; box-shadow: var(--shadow); }
 .q-number-tag { display: inline-block; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 800; padding: 4px 14px; border-radius: 99px; margin-bottom: 14px; letter-spacing: .05em; }
 .q-text { font-size: 17px; font-weight: 600; line-height: 1.65; color: var(--text); margin-bottom: 18px; }
@@ -481,7 +472,6 @@ sub { bottom: -0.25em; color: inherit; }
 .opt-text { font-size: 15px; color: var(--text); line-height: 1.5; padding-top: 2px; }
 .opt-img { max-width: 220px; border-radius: var(--radius-xs); margin-top: 8px; display: block; border: 1px solid var(--border); }
 
-/* Nav buttons */
 .nav-btns { display: flex; gap: 10px; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; }
 .btn-nav {
   padding: 12px 22px; border-radius: var(--radius-sm); border: 1.5px solid var(--border);
@@ -494,7 +484,6 @@ sub { bottom: -0.25em; color: inherit; }
 .btn-nav.next:hover:not(:disabled) { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
 .btn-nav.skip { background: var(--bg); color: var(--muted); font-size: 13px; padding: 10px 18px; }
 
-/* Submit card */
 .submit-card {
   background: var(--surface); border-radius: var(--radius); border: 1.5px solid var(--success);
   padding: 28px; margin-bottom: 40px; display: none; opacity: 0;
@@ -526,7 +515,14 @@ sub { bottom: -0.25em; color: inherit; }
 .btn-submit:hover:not(:disabled) { background: #15803d; }
 .btn-submit:disabled { opacity: .6; cursor: not-allowed; }
 
-/* Responsive */
+/* Firebase badge */
+.fb-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 10px; font-weight: 700; color: #f59e0b;
+  background: #fef3c7; padding: 3px 8px; border-radius: 99px;
+  border: 1px solid #fbbf24; margin-left: 8px;
+}
+
 @media (max-width:600px) {
   .exam-header { padding: 14px 16px; }
   .q-card { padding: 20px 16px; }
@@ -615,7 +611,6 @@ sub { bottom: -0.25em; color: inherit; }
         <label>Nomor Peserta</label>
         <input type="text" id="no-peserta" placeholder="Contoh: 2025001" autocomplete="off" oninput="onNoPesertaInput()">
         <div class="info-row" id="info-peserta"></div>
-        <!-- Detail box siswa ditemukan -->
         <div class="siswa-detail" id="siswa-detail">
           <div class="siswa-detail-row">
             <div class="siswa-detail-item">
@@ -632,7 +627,6 @@ sub { bottom: -0.25em; color: inherit; }
             </div>
           </div>
         </div>
-        <!-- Manual fallback -->
         <div id="manual-wrap">
           <div class="manual-head"><span></span>Nomor tidak terdaftar — Isi data manual</div>
           <div class="manual-field">
@@ -683,7 +677,6 @@ sub { bottom: -0.25em; color: inherit; }
 
   <!-- ──────────── HALAMAN 3: SOAL ──────────── -->
   <div id="hal-soal" class="hidden">
-    <!-- Header -->
     <div class="exam-header">
       <div class="stu-info">
         <h2 id="txt-nama-siswa"></h2>
@@ -692,7 +685,6 @@ sub { bottom: -0.25em; color: inherit; }
       <span class="mapel-badge" id="txt-mapel-badge"></span>
     </div>
 
-    <!-- Timer reading / aktif -->
     <div class="timer-bar" id="timer-bar">
       <span class="timer-icon" id="timer-icon">⏳</span>
       <div style="flex:1">
@@ -702,14 +694,12 @@ sub { bottom: -0.25em; color: inherit; }
       <div class="timer-countdown" id="timer-countdown">15</div>
     </div>
 
-    <!-- Progress -->
     <div class="progress-wrap">
       <span style="font-size:13px;font-weight:700;color:var(--muted);white-space:nowrap">Progres</span>
       <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
       <span class="progress-count" id="progress-count">0 / 0</span>
     </div>
 
-    <!-- Palette toggle -->
     <div class="palette-toggle-bar" id="palette-toggle-bar" onclick="togglePalette()">
       <div class="palette-toggle-left">
         <span style="font-size:16px">🗂️</span>
@@ -719,13 +709,9 @@ sub { bottom: -0.25em; color: inherit; }
       <div class="palette-toggle-icon" id="palette-toggle-icon">▾</div>
     </div>
 
-    <!-- Soal card -->
     <div class="q-card" id="q-card"></div>
-
-    <!-- Nav -->
     <div class="nav-btns" id="nav-btns"></div>
 
-    <!-- Submit card -->
     <div class="submit-card" id="submit-card">
       <div class="submit-card-header">
         <div class="submit-card-icon">🎯</div>
@@ -772,32 +758,63 @@ sub { bottom: -0.25em; color: inherit; }
   </div>
 </div>
 
-<script>
+<script type="module">
 /* ═════════════════════════════════════════════════════════
-   KONFIGURASI — ganti scriptURL dengan URL GAS Anda
+   KONFIGURASI
 ═════════════════════════════════════════════════════════ */
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyPDs4UnjK8zVRsTD8EQjdnQr5XQd8JRad89SGGMKBMfzxTWEwTSRqJs9SU5byeImZz/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyljdsBXeGZRmqEDD8avGDFTykq7CWUVZGxpcCzoTby_Ay6CkanffGEOH19J-QPlquI/exec';
+
+// ── FIREBASE CONFIG (Realtime Database) ─────────────────
+const firebaseConfig = {
+  apiKey            : 'AIzaSyAygLoWUS9gobA08eeqQhJWSjNuls1x0pU',
+  authDomain        : 'sistem-ujian-nerizi.firebaseapp.com',
+  databaseURL       : 'https://sistem-ujian-nerizi-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId         : 'sistem-ujian-nerizi',
+  storageBucket     : 'sistem-ujian-nerizi.firebasestorage.app',
+  messagingSenderId : '49468745986',
+  appId             : '1:49468745986:web:c1c707fcba8615eceafa1b',
+};
+// ────────────────────────────────────────────────────────
+
+// ── FIREBASE REALTIME DATABASE — lazy init ───────────────
+let _rtdb = null;
+
+async function getRealtimeDB() {
+  if (_rtdb) return _rtdb;
+  try {
+    const { initializeApp, getApps } = await import(
+      'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js'
+    );
+    const { getDatabase, ref, push, serverTimestamp } = await import(
+      'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js'
+    );
+    const app = getApps().length ? getApps()[0] : initializeApp(firebaseConfig);
+    const db  = getDatabase(app);
+    _rtdb = { db, ref, push, serverTimestamp };
+    return _rtdb;
+  } catch (e) {
+    console.warn('[Firebase RTDB] Gagal init:', e);
+    return null;
+  }
+}
 
 /* ═════════════════════════════════════════════════════════
    STATE
 ═════════════════════════════════════════════════════════ */
-let coverData      = null;    // data cover
-let logoDataUri    = '';      // logo base64
-let siswaAktif     = null;    // { 'no peserta', nama, kelas, sekolah }
+let coverData      = null;
+let logoDataUri    = '';
+let siswaAktif     = null;
 let modeManual     = false;
-let infoMapelData  = null;    // { kode, mataPelajaran, passwordMulai }
-let soalList       = [];      // soal yang sudah diacak
-let jawaban        = {};      // { idx: 'A'/'B'/... }
+let infoMapelData  = null;
+let soalList       = [];
+let jawaban        = {};
 let currentIdx     = 0;
 let passwordSelesai = '';
 let submitCardShown = false;
 
-// Timer
 let timerInterval  = null;
 let readingDone    = false;
 let timerSisaDetik = 15;
-
-// Debounce
 let timerCekPeserta = null;
 
 /* ═════════════════════════════════════════════════════════
@@ -843,12 +860,10 @@ function dismissSplash() {
 window.addEventListener('DOMContentLoaded', async () => {
   animateSplashTo(20, 400, 'Menghubungi server...', async () => {
     try {
-      // Load cover
-      const res  = await gasGet('getCover');
+      const res = await gasGet('getCover');
       coverData  = res.covers ? res.covers[0] : null;
 
       animateSplashTo(55, 500, 'Memuat data cover...', async () => {
-        // Load logo jika ada
         if (coverData && coverData['logo']) {
           try {
             const fileId = extractDriveId(coverData['logo']);
@@ -877,29 +892,19 @@ window.addEventListener('DOMContentLoaded', async () => {
    GAS API HELPERS
 ═════════════════════════════════════════════════════════ */
 async function gasGet(action, params = {}) {
-  const qs = new URLSearchParams({ action, ...params }).toString();
+  const qs  = new URLSearchParams({ action, ...params }).toString();
   const res = await fetch(`${scriptURL}?${qs}`);
   return res.json();
 }
 
 async function gasPost(payload) {
-  const res = await fetch(scriptURL, {
-    method: 'POST',
-    mode: 'no-cors',
+  await fetch(scriptURL, {
+    method : 'POST',
+    mode   : 'no-cors',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
+    body   : JSON.stringify(payload),
   });
-  // no-cors → res tidak bisa dibaca, anggap berhasil
   return { success: true };
-}
-
-async function gasPostReadable(payload) {
-  const res = await fetch(scriptURL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-  });
-  return res.json();
 }
 
 /* ═════════════════════════════════════════════════════════
@@ -911,7 +916,6 @@ function renderCover() {
     document.getElementById('cover-tahun').textContent = coverData['tahun'] || '';
   }
 
-  // Set logo di semua tempat
   ['cover-logo-img', 'brand-logo-img', 'splash-logo-img'].forEach(id => {
     const el = document.getElementById(id);
     if (logoDataUri) { el.src = logoDataUri; el.style.display = 'block'; }
@@ -923,7 +927,6 @@ function renderCover() {
     });
   }
 
-  // Brand title
   if (coverData) {
     const el = document.getElementById('brand-title');
     if (el) el.textContent = coverData['judul'] || 'Ujian Online';
@@ -932,19 +935,19 @@ function renderCover() {
   showPage('hal-cover');
 }
 
-function goHalPeserta() {
+window.goHalPeserta = function() {
   showPage('hal-peserta');
   document.getElementById('no-peserta').focus();
-}
+};
 
 /* ═════════════════════════════════════════════════════════
-   HALAMAN PESERTA — CEK NO PESERTA
+   CEK NO PESERTA
 ═════════════════════════════════════════════════════════ */
-function onNoPesertaInput() {
-  const no = document.getElementById('no-peserta').value.trim();
-  const infoEl    = document.getElementById('info-peserta');
-  const detailEl  = document.getElementById('siswa-detail');
-  const manualEl  = document.getElementById('manual-wrap');
+window.onNoPesertaInput = function() {
+  const no       = document.getElementById('no-peserta').value.trim();
+  const infoEl   = document.getElementById('info-peserta');
+  const detailEl = document.getElementById('siswa-detail');
+  const manualEl = document.getElementById('manual-wrap');
 
   infoEl.className = 'info-row';
   infoEl.innerHTML = '';
@@ -966,12 +969,10 @@ function onNoPesertaInput() {
         siswaAktif = res.peserta;
         infoEl.className = 'info-row ok';
         infoEl.innerHTML = '✓ Peserta ditemukan';
-        // Tampilkan detail
         document.getElementById('sd-nama').textContent    = res.peserta['nama']    || '—';
         document.getElementById('sd-kelas').textContent   = res.peserta['kelas']   || '—';
         document.getElementById('sd-sekolah').textContent = res.peserta['sekolah'] || '—';
         detailEl.style.display = 'block';
-        manualEl.style.display = 'none';
         modeManual = false;
       } else {
         infoEl.className = 'info-row err';
@@ -985,12 +986,12 @@ function onNoPesertaInput() {
       infoEl.innerHTML = '✕ Gagal mengecek — periksa koneksi';
     }
   }, 700);
-}
+};
 
 /* ═════════════════════════════════════════════════════════
    CEK KODE MAPEL
 ═════════════════════════════════════════════════════════ */
-async function cekKodeMapel() {
+window.cekKodeMapel = async function() {
   const kode   = document.getElementById('kode-mapel').value.trim();
   const infoEl = document.getElementById('info-mapel');
   const boxEl  = document.getElementById('mapel-info-box');
@@ -1019,13 +1020,12 @@ async function cekKodeMapel() {
     infoEl.className = 'info-row err';
     infoEl.innerHTML = '✕ Gagal mengecek — periksa koneksi';
   }
-}
+};
 
 /* ═════════════════════════════════════════════════════════
    MULAI UJIAN
 ═════════════════════════════════════════════════════════ */
-async function mulaiUjian() {
-  // Validasi peserta
+window.mulaiUjian = async function() {
   if (modeManual) {
     const nm = document.getElementById('manual-nama').value.trim();
     const kl = document.getElementById('manual-kelas').value.trim();
@@ -1042,7 +1042,6 @@ async function mulaiUjian() {
     if (!siswaAktif) return toast('error', 'Peserta Tidak Valid', 'Masukkan nomor peserta yang terdaftar.');
   }
 
-  // Validasi mapel
   const kode = document.getElementById('kode-mapel').value.trim();
   if (!kode) return toast('warn', 'Kode Mapel Kosong', 'Isi kode mata pelajaran.');
   if (!infoMapelData) {
@@ -1050,7 +1049,6 @@ async function mulaiUjian() {
     if (!infoMapelData) return;
   }
 
-  // Validasi password mulai — dikirim ke server
   const password = document.getElementById('pass-mulai').value;
   if (!password) return toast('warn', 'Password Kosong', 'Masukkan password mulai dari pengawas.');
 
@@ -1068,16 +1066,11 @@ async function mulaiUjian() {
       return;
     }
 
-    soalList         = acakSoal(res.soalList || []);
-    passwordSelesai  = res.passwordSelesai || '';
-    jawaban          = {};
-    currentIdx       = 0;
-    submitCardShown  = false;
-
-    // Debug: log ke konsol
-    console.log('[getSoal] soalList dari server:', JSON.stringify(res.soalList ? res.soalList.slice(0,2) : []));
-    console.log('[getSoal] soalList setelah acak:', soalList.length, 'soal');
-    if (soalList.length > 0) console.log('[getSoal] soal[0].pilihan:', JSON.stringify(soalList[0].pilihan));
+    soalList        = acakSoal(res.soalList || []);
+    passwordSelesai = res.passwordSelesai || '';
+    jawaban         = {};
+    currentIdx      = 0;
+    submitCardShown = false;
 
     if (soalList.length === 0) {
       toast('warn', 'Soal Kosong', 'Tidak ada soal untuk mata pelajaran ini.');
@@ -1086,13 +1079,11 @@ async function mulaiUjian() {
       return;
     }
 
-    // Set header ujian
     document.getElementById('txt-nama-siswa').textContent = siswaAktif['nama'] || '';
     document.getElementById('txt-info-siswa').textContent =
       (siswaAktif['kelas'] || '') + (siswaAktif['sekolah'] ? ' · ' + siswaAktif['sekolah'] : '');
     document.getElementById('txt-mapel-badge').textContent = res.mataPelajaran || kode;
 
-    // Reset submit card
     const sc = document.getElementById('submit-card');
     sc.classList.remove('show','animate-in');
     document.getElementById('pass-selesai').value = '';
@@ -1108,85 +1099,54 @@ async function mulaiUjian() {
     btn.disabled = false;
     btn.innerHTML = 'Masuk ke Ruang Ujian';
   }
-}
+};
 
 /* ═════════════════════════════════════════════════════════
-   ACAK SOAL (urutan: 5 pilihan → 4 → 2 → lainnya)
+   ACAK SOAL
 ═════════════════════════════════════════════════════════ */
 function acakSoal(list) {
   if (!list || list.length === 0) return [];
-
   const shuffle = arr => arr.sort(() => Math.random() - 0.5);
-
-  // Normalisasi pilihan di sini juga — pastikan s.pilihan selalu array
   list = list.map(s => {
     if (!s.pilihan) s.pilihan = [];
     if (!Array.isArray(s.pilihan)) {
-      // convert object ke array
       s.pilihan = Object.entries(s.pilihan)
         .filter(([,v]) => v)
         .map(([k,v]) => ({ huruf: k, teks: String(v), gambar: '' }));
     }
     return s;
   });
-
   const jml = s => Array.isArray(s.pilihan) ? s.pilihan.length : 0;
-
   const soal5   = shuffle(list.filter(s => jml(s) === 5));
   const soal4   = shuffle(list.filter(s => jml(s) === 4));
   const soal2   = shuffle(list.filter(s => jml(s) === 2));
-  const lainnya = shuffle(list.filter(s => { const n = jml(s); return n!==5 && n!==4 && n!==2; }));
-
-  const result = [...soal5, ...soal4, ...soal2, ...lainnya];
-  console.log('[acakSoal] total:', result.length, '| distribusi 5pilihan:', soal5.length, '4:', soal4.length, '2:', soal2.length, 'lain:', lainnya.length);
-  if (result.length > 0) console.log('[acakSoal] sample soal[0].pilihan:', JSON.stringify(result[0].pilihan));
-  return result;
+  const lainnya = shuffle(list.filter(s => { const n=jml(s); return n!==5&&n!==4&&n!==2; }));
+  return [...soal5, ...soal4, ...soal2, ...lainnya];
 }
 
 /* ═════════════════════════════════════════════════════════
-   RENDER QUESTION + TIMER
+   RENDER QUESTION
 ═════════════════════════════════════════════════════════ */
 function renderQuestion(idx) {
   currentIdx = idx;
   const s = soalList[idx];
 
-  // === PILIHAN JAWABAN ===
-  // GAS mengirim: s.pilihan = [{huruf:'A', teks:'...', gambar:'...'}, ...]
   let pilihan = [];
-
   if (Array.isArray(s.pilihan) && s.pilihan.length > 0) {
-    // Format standar dari GAS — ambil semua yang punya huruf
     pilihan = s.pilihan.filter(opt => opt && opt.huruf);
-
   } else if (s.pilihan && typeof s.pilihan === 'object') {
-    // Format object {A:'teks', B:'teks', ...}
     pilihan = Object.entries(s.pilihan)
-      .filter(([, v]) => v)
-      .map(([k, v]) => ({ huruf: k, teks: String(v), gambar: '' }));
+      .filter(([,v]) => v)
+      .map(([k,v]) => ({ huruf: k, teks: String(v), gambar: '' }));
   }
-
-  // Fallback: baca langsung dari field soal (opt_a/opt_A)
   if (pilihan.length === 0) {
     ['A','B','C','D','E','F','G','H','I','J','K','L'].forEach(h => {
-      const teks = String(
-        s['opt_' + h]               ||  // opt_A
-        s['opt_' + h.toLowerCase()] ||  // opt_a
-        ''
-      ).trim();
-      const gambar = String(
-        s['gambar opt_' + h]               ||
-        s['gambar opt_' + h.toLowerCase()] ||
-        ''
-      ).trim();
+      const teks   = String(s['opt_'+h] || s['opt_'+h.toLowerCase()] || '').trim();
+      const gambar = String(s['gambar opt_'+h] || s['gambar opt_'+h.toLowerCase()] || '').trim();
       if (teks || gambar) pilihan.push({ huruf: h, teks, gambar });
     });
   }
 
-  // Debug — lihat di Console browser (F12)
-  console.log('[Soal ' + (idx+1) + '] raw s.pilihan:', JSON.stringify(s.pilihan));
-  console.log('[Soal ' + (idx+1) + '] pilihan hasil parse:', pilihan.length, JSON.stringify(pilihan));
-
-  // === BANGUN CARD (soal + gambar soal) ===
   const soalTeks   = s.soal || s.Soal || '';
   const gambarSoal = s.gambarSoal || s.Img_Soal || '';
 
@@ -1200,17 +1160,17 @@ function renderQuestion(idx) {
   const optList = card.querySelector('#option-list');
 
   if (pilihan.length === 0) {
-    optList.innerHTML = '<div style="color:var(--danger);font-size:13px;padding:12px 0">&#9888; Pilihan jawaban tidak tersedia untuk soal ini.</div>';
+    optList.innerHTML = '<div style="color:var(--danger);font-size:13px;padding:12px 0">⚠ Pilihan jawaban tidak tersedia untuk soal ini.</div>';
   } else {
     pilihan.forEach(function(opt) {
-      var huruf  = String(opt.huruf  || '').trim();
-      var teks   = String(opt.teks   || '').trim();
-      var gambar = String(opt.gambar || '').trim();
+      const huruf  = String(opt.huruf  || '').trim();
+      const teks   = String(opt.teks   || '').trim();
+      const gambar = String(opt.gambar || '').trim();
 
-      var wrapper = document.createElement('div');
+      const wrapper = document.createElement('div');
       wrapper.className = 'option-item';
 
-      var radio = document.createElement('input');
+      const radio   = document.createElement('input');
       radio.type    = 'radio';
       radio.name    = 'soal_q';
       radio.id      = 'opt_' + huruf;
@@ -1218,25 +1178,24 @@ function renderQuestion(idx) {
       radio.checked = (jawaban[idx] === huruf);
       radio.addEventListener('change', (function(h){ return function(){ pilihJawaban(h); }; })(huruf));
 
-      var lbl = document.createElement('label');
+      const lbl = document.createElement('label');
       lbl.className = 'option-label';
       lbl.setAttribute('for', 'opt_' + huruf);
 
-      var keySpan = document.createElement('span');
+      const keySpan = document.createElement('span');
       keySpan.className   = 'opt-key';
       keySpan.textContent = huruf;
 
-      var txtSpan = document.createElement('span');
+      const txtSpan = document.createElement('span');
       txtSpan.className = 'opt-text';
       txtSpan.innerHTML = escHtml(teks);
 
       if (gambar) {
-        var br  = document.createElement('br');
-        var img = document.createElement('img');
+        const img  = document.createElement('img');
         img.setAttribute('data-src', gambar);
         img.className = 'opt-img';
         img.style.cssText = 'min-height:50px;background:var(--bg);display:block;margin-top:8px';
-        txtSpan.appendChild(br);
+        txtSpan.appendChild(document.createElement('br'));
         txtSpan.appendChild(img);
       }
 
@@ -1256,12 +1215,12 @@ function renderQuestion(idx) {
 }
 
 /* ═════════════════════════════════════════════════════════
-   TIMER 15 DETIK MEMBACA
+   TIMER
 ═════════════════════════════════════════════════════════ */
 function mulaiTimer() {
   clearInterval(timerInterval);
   timerSisaDetik = 15;
-  readingDone = false;
+  readingDone    = false;
 
   const barEl   = document.getElementById('timer-bar');
   const fillEl  = document.getElementById('timer-bar-fill');
@@ -1270,54 +1229,46 @@ function mulaiTimer() {
   const iconEl  = document.getElementById('timer-icon');
   const optList = document.getElementById('option-list');
 
-  // Aktifkan mode membaca
-  barEl.className   = 'timer-bar reading';
+  barEl.className     = 'timer-bar reading';
   labelEl.textContent = 'Waktu Membaca — pilihan jawaban terkunci';
-  labelEl.className = 'timer-label reading-mode';
-  iconEl.textContent = '🔒';
+  labelEl.className   = 'timer-label reading-mode';
+  iconEl.textContent  = '🔒';
   countEl.textContent = '15';
-  countEl.className = 'timer-countdown';
-  fillEl.style.width = '100%';
+  countEl.className   = 'timer-countdown';
+  fillEl.style.width  = '100%';
   if (optList) optList.classList.add('options-blocker');
 
   timerInterval = setInterval(() => {
     timerSisaDetik--;
-    const pct = (timerSisaDetik / 15) * 100;
-    fillEl.style.width = pct + '%';
-    countEl.textContent = timerSisaDetik;
-
+    fillEl.style.width   = ((timerSisaDetik / 15) * 100) + '%';
+    countEl.textContent  = timerSisaDetik;
     if (timerSisaDetik <= 5) countEl.className = 'timer-countdown warning';
 
     if (timerSisaDetik <= 0) {
       clearInterval(timerInterval);
       readingDone = true;
-
-      // Aktifkan pilihan jawaban
       if (optList) optList.classList.remove('options-blocker');
-      barEl.className   = 'timer-bar active';
+      barEl.className     = 'timer-bar active';
       labelEl.textContent = 'Pilih jawaban Anda';
-      labelEl.className = 'timer-label';
-      iconEl.textContent = '✍️';
+      labelEl.className   = 'timer-label';
+      iconEl.textContent  = '✍️';
       countEl.textContent = '✓';
-      countEl.className = 'timer-countdown';
+      countEl.className   = 'timer-countdown';
       fillEl.style.background = 'var(--success)';
-      fillEl.style.width = '100%';
+      fillEl.style.width  = '100%';
     }
   }, 1000);
 }
 
 /* ═════════════════════════════════════════════════════════
-   PILIH JAWABAN
+   JAWABAN & PALETTE
 ═════════════════════════════════════════════════════════ */
 function pilihJawaban(val) {
-  if (!readingDone) return; // jangan bisa dipilih saat reading
+  if (!readingDone) return;
   jawaban[currentIdx] = val;
   updatePalette();
 }
 
-/* ═════════════════════════════════════════════════════════
-   PALETTE
-═════════════════════════════════════════════════════════ */
 function renderPalette() {
   const grid = document.getElementById('q-palette-grid');
   grid.innerHTML = '';
@@ -1345,11 +1296,11 @@ function updatePalette() {
   const total    = soalList.length;
   const pct      = total > 0 ? ((answered / total) * 100).toFixed(0) : 0;
 
-  document.getElementById('progress-fill').style.width    = pct + '%';
-  document.getElementById('progress-count').textContent   = `${answered} / ${total}`;
+  document.getElementById('progress-fill').style.width     = pct + '%';
+  document.getElementById('progress-count').textContent    = `${answered} / ${total}`;
   document.getElementById('palette-count-badge').textContent = `${answered} / ${total} dijawab`;
-  document.getElementById('pstat-ans').textContent         = `${answered} dijawab`;
-  document.getElementById('pstat-unans').textContent       = `${total - answered} belum`;
+  document.getElementById('pstat-ans').textContent          = `${answered} dijawab`;
+  document.getElementById('pstat-unans').textContent        = `${total - answered} belum`;
 
   cekTampilSubmit(answered, total);
 }
@@ -1375,10 +1326,10 @@ function cekTampilSubmit(answered, total) {
   }
 }
 
-function togglePalette() {
+window.togglePalette = function() {
   const overlay = document.getElementById('palette-overlay');
   overlay.classList.contains('show') ? closePalette() : openPalette();
-}
+};
 function openPalette() {
   document.getElementById('palette-overlay').classList.add('show');
   document.getElementById('palette-toggle-bar').classList.add('open');
@@ -1389,9 +1340,9 @@ function closePalette() {
   document.getElementById('palette-toggle-bar').classList.remove('open');
   document.body.style.overflow = '';
 }
-function closePaletteOnOverlay(e) {
+window.closePaletteOnOverlay = function(e) {
   if (e.target === document.getElementById('palette-overlay')) closePalette();
-}
+};
 
 /* ═════════════════════════════════════════════════════════
    NAVIGASI SOAL
@@ -1406,25 +1357,25 @@ function renderNav() {
     <button class="btn-nav next" onclick="goToNext()" ${isLast ? 'disabled' : ''}>Selanjutnya →</button>`;
 }
 
-function goTo(idx) {
+window.goTo = function(idx) {
   if (idx < 0 || idx >= soalList.length) return;
   renderQuestion(idx);
-}
+};
 
-function goToNext() {
+window.goToNext = function() {
   if (jawaban[currentIdx] === undefined) {
     toast('warn', 'Belum Dijawab', 'Pilih jawaban terlebih dahulu, atau gunakan tombol Lewati.');
     return;
   }
   if (currentIdx < soalList.length - 1) goTo(currentIdx + 1);
   else toast('info', 'Soal Terakhir', 'Kamu sudah di soal terakhir.');
-}
+};
 
 /* ═════════════════════════════════════════════════════════
-   SUBMIT JAWABAN
+   SUBMIT — FIREBASE REALTIME DATABASE
 ═════════════════════════════════════════════════════════ */
-function validasiKirim() {
-  const passInput = document.getElementById('pass-selesai').value;
+window.validasiKirim = function() {
+  const passInput  = document.getElementById('pass-selesai').value;
   if (!passInput) return toast('warn', 'Password Kosong', 'Masukkan password selesai dari pengawas.');
 
   const unanswered = soalList.length - Object.keys(jawaban).length;
@@ -1433,84 +1384,207 @@ function validasiKirim() {
     : 'Semua soal telah dijawab. Konfirmasi pengiriman?';
 
   showModal({
-    icon    : unanswered > 0 ? '⚠️' : '📤',
-    iconBg  : unanswered > 0 ? '#fef3c7' : '#dbeafe',
-    title   : unanswered > 0 ? 'Ada Soal Belum Dijawab' : 'Kirim Jawaban?',
-    sub     : msg,
-    buttons : [
-      { label: 'Batal',            cls: 'ghost' },
-      { label: 'Ya, Kirim Sekarang', cls: 'primary', action: kirimJawaban }
+    icon   : unanswered > 0 ? '⚠️' : '📤',
+    iconBg : unanswered > 0 ? '#fef3c7' : '#dbeafe',
+    title  : unanswered > 0 ? 'Ada Soal Belum Dijawab' : 'Kirim Jawaban?',
+    sub    : msg,
+    buttons: [
+      { label: 'Batal',             cls: 'ghost' },
+      { label: 'Ya, Kirim Sekarang', cls: 'primary', action: kirimJawaban },
     ],
   });
-}
+};
 
 async function kirimJawaban() {
-  const btn     = document.getElementById('btn-kirim');
-  btn.disabled  = true;
+  const btn    = document.getElementById('btn-kirim');
+  btn.disabled = true;
   btn.innerHTML = '<div class="spinner"></div> Mengirim...';
 
   const passInput = document.getElementById('pass-selesai').value;
   const kode      = document.getElementById('kode-mapel').value.trim();
 
-  // Susun jawaban: { "1": "A", "2": "B", ... }
+  // ── Susun jawaban: { "1": "A", "2": "B", ... } ──────────
   const jawabanMap = {};
-  soalList.forEach((_, i) => {
-    jawabanMap[String(i + 1)] = jawaban[i] || '';
-  });
+  soalList.forEach((_, i) => { jawabanMap[String(i + 1)] = jawaban[i] || ''; });
 
+  // ── Hitung nilai di client ───────────────────────────────
+  let benar = 0;
+  const kunciMap      = {};
+  const detailJawaban = {}; // per soal: { jawaban, kunci, benar }
+  soalList.forEach((s, i) => {
+    const noSoal  = String(i + 1);
+    const kunci   = String(s.kunci || '').trim().toUpperCase();
+    const pilihan = (jawaban[i] || '').toUpperCase();
+    const isBenar = kunci !== '' && pilihan === kunci;
+    kunciMap[noSoal]      = kunci;
+    detailJawaban[noSoal] = { jawaban: pilihan, kunci, benar: isBenar };
+    if (isBenar) benar++;
+  });
+  const total = soalList.length;
+  let   nilai = total > 0 ? Math.round((benar / total) * 100) : 0;
+
+  const waktuSubmit    = new Date().toISOString();
+  const mataPelajaran  = document.getElementById('txt-mapel-badge').textContent;
+
+  // ── Payload lengkap ─────────────────────────────────────
   const dataKirim = {
-    noPeserta       : siswaAktif['no peserta'] || '',
-    nama            : siswaAktif['nama']        || '',
-    kelas           : siswaAktif['kelas']       || '',
-    sekolah         : siswaAktif['sekolah']     || '',
-    kodeMapel       : kode,
-    mataPelajaran   : document.getElementById('txt-mapel-badge').textContent,
-    passwordSelesai : passInput,
-    jawaban         : jawabanMap,
+    noPeserta      : siswaAktif['no peserta'] || '',
+    nama           : siswaAktif['nama']        || '',
+    kelas          : siswaAktif['kelas']       || '',
+    sekolah        : siswaAktif['sekolah']     || '',
+    kodeMapel      : kode,
+    mataPelajaran,
+    passwordSelesai: passInput,
+    jawaban        : jawabanMap,
+    kunciJawaban   : kunciMap,
+    detailJawaban,
+    nilai, benar, total,
+    waktuSubmit,
   };
 
   console.log('[kirimJawaban] payload:', JSON.stringify(dataKirim));
 
-  try {
-    // Gunakan GET dengan payload JSON — menghindari CORS block pada GAS dari domain eksternal
-    // GAS Web App tidak bisa set Access-Control-Allow-Origin lewat ContentService,
-    // sehingga fetch POST dari luar domain selalu di-block browser.
-    const payloadEncoded = encodeURIComponent(JSON.stringify(dataKirim));
-    const url = scriptURL + '?action=submitJawabanGet&payload=' + payloadEncoded;
+  // ══════════════════════════════════════════════════════════
+  //  DUAL-WRITE PARALEL: Firebase RTDB  +  GAS → Spreadsheet
+  // ══════════════════════════════════════════════════════════
+  btn.innerHTML = '<div class="spinner"></div> Menyimpan ke Firebase & Spreadsheet...';
 
-    const res = await fetch(url);
-    const json = await res.json();
+  let berhasilFirebase    = false;
+  let berhasilSpreadsheet = false;
+  let fbKey               = null;   // key yang dikembalikan Firebase
 
-    console.log('[kirimJawaban] response:', JSON.stringify(json));
+  // ── 1. Firebase Realtime Database ───────────────────────
+  const fbPromise = (async () => {
+    try {
+      const fb = await getRealtimeDB();
+      if (!fb) throw new Error('RTDB tidak tersedia');
 
-    if (json.success) {
-      const nilai = json.nilai !== undefined ? json.nilai : '—';
-      clearInterval(timerInterval);
-      showModal({
-        icon   : '🎉',
-        iconBg : '#dcfce7',
-        title  : 'Jawaban Terkirim!',
-        sub    : '<strong>' + (siswaAktif['nama'] || '') + '</strong><br>' +
-                 'Nilai Anda: <span style="font-size:28px;font-weight:900;color:var(--success)">' + nilai + '</span>' +
-                 '<br><small style="color:var(--muted)">' + (json.benar || '—') + ' benar dari ' + (json.total || soalList.length) + ' soal</small>',
-        buttons: [{ label: 'Selesai', cls: 'success', action: () => location.reload() }],
+      // Simpan di hasil_ujian/{pushKey}
+      const hasilRef = fb.ref(fb.db, 'hasil_ujian');
+      const snap     = await fb.push(hasilRef, {
+        noPeserta     : dataKirim.noPeserta,
+        nama          : dataKirim.nama,
+        kelas         : dataKirim.kelas,
+        sekolah       : dataKirim.sekolah,
+        kodeMapel     : dataKirim.kodeMapel,
+        mataPelajaran : dataKirim.mataPelajaran,
+        jawaban       : JSON.stringify(jawabanMap),
+        kunciJawaban  : JSON.stringify(kunciMap),
+        // Detail per soal (untuk keperluan analitik)
+        detailJawaban : JSON.stringify(detailJawaban),
+        nilai, benar, total,
+        waktuSubmit,
+        syncedToSheet : false,   // akan diupdate GAS jika berhasil
       });
-    } else {
-      toast('error', 'Gagal Mengirim', json.message || 'Terjadi kesalahan. Coba lagi.');
+      fbKey           = snap.key;   // mis: "-O1abc..."
+      berhasilFirebase = true;
+      console.log('[Firebase RTDB] Tersimpan, key:', fbKey);
+    } catch (err) {
+      console.warn('[Firebase RTDB] Gagal:', err.message);
+    }
+  })();
+
+  // ── 2. GAS → Rekap ke Google Spreadsheet ────────────────
+  const gasPromise = (async () => {
+    try {
+      // Kirim via GET dengan payload ter-encode (GAS Web App harus handle action=rekapJawaban)
+      const payload = {
+        ...dataKirim,
+        jawaban     : JSON.stringify(jawabanMap),
+        kunciJawaban: JSON.stringify(kunciMap),
+        _action     : 'rekapJawaban',
+      };
+      const payloadEncoded = encodeURIComponent(JSON.stringify(payload));
+      const url = scriptURL + '?action=rekapJawaban&payload=' + payloadEncoded;
+
+      const res  = await fetch(url);
+      const json = await res.json();
+      console.log('[GAS Spreadsheet] response:', JSON.stringify(json));
+
+      if (json.success) {
+        berhasilSpreadsheet = true;
+        // Jika GAS mengembalikan nilai yang sudah dihitung ulang server-side, gunakan itu
+        if (json.nilai !== undefined) { nilai = json.nilai; benar = json.benar; }
+      } else {
+        console.warn('[GAS Spreadsheet] Server menolak:', json.message);
+      }
+    } catch (err) {
+      console.warn('[GAS Spreadsheet] Gagal:', err.message);
+    }
+  })();
+
+  // ── Tunggu keduanya selesai ──────────────────────────────
+  await Promise.allSettled([fbPromise, gasPromise]);
+
+  // ── Jika Firebase berhasil & sudah sinkron ke sheet, tandai ─
+  if (berhasilFirebase && berhasilSpreadsheet && fbKey) {
+    try {
+      const fb       = await getRealtimeDB();
+      const syncRef  = fb.ref(fb.db, `hasil_ujian/${fbKey}/syncedToSheet`);
+      // set tidak butuh import tambahan, pakai update via push workaround — atau import set
+      const { set } = await import('https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js');
+      await set(syncRef, true);
+      console.log('[Firebase RTDB] syncedToSheet = true');
+    } catch (_) {}
+  }
+
+  // ── Jika kedua jalur gagal, coba submit fallback biasa ───
+  if (!berhasilFirebase && !berhasilSpreadsheet) {
+    try {
+      btn.innerHTML = '<div class="spinner"></div> Mencoba jalur darurat...';
+      const payloadEncoded = encodeURIComponent(JSON.stringify({
+        ...dataKirim,
+        jawaban     : JSON.stringify(jawabanMap),
+        kunciJawaban: JSON.stringify(kunciMap),
+      }));
+      const url  = scriptURL + '?action=submitJawabanGet&payload=' + payloadEncoded;
+      const res  = await fetch(url);
+      const json = await res.json();
+      if (!json.success) {
+        toast('error', 'Gagal Mengirim', json.message || 'Semua jalur gagal. Hubungi pengawas.');
+        btn.disabled = false;
+        btn.innerHTML = 'Kirim Semua Jawaban';
+        return;
+      }
+      berhasilSpreadsheet = true;
+      if (json.nilai !== undefined) { nilai = json.nilai; benar = json.benar; }
+    } catch (err) {
+      toast('error', 'Gagal Mengirim', 'Koneksi bermasalah total. Hubungi pengawas.');
       btn.disabled = false;
       btn.innerHTML = 'Kirim Semua Jawaban';
+      return;
     }
-
-  } catch (err) {
-    console.error('[kirimJawaban] error:', err);
-    toast('error', 'Gagal Mengirim', 'Koneksi bermasalah: ' + err.message);
-    btn.disabled = false;
-    btn.innerHTML = 'Kirim Semua Jawaban';
   }
+
+  // ── Susun status simpan untuk ditampilkan ke siswa ───────
+  const statusLines = [];
+  if (berhasilFirebase)
+    statusLines.push('<small style="color:#16a34a">✓ Tersimpan di Firebase Realtime Database</small>');
+  else
+    statusLines.push('<small style="color:#d97706">⚠ Firebase tidak tersedia saat ini</small>');
+
+  if (berhasilSpreadsheet)
+    statusLines.push('<small style="color:#16a34a">✓ Terekap di Google Spreadsheet</small>');
+  else
+    statusLines.push('<small style="color:#d97706">⚠ Rekap Spreadsheet akan disinkronkan nanti</small>');
+
+  // ── SUKSES ────────────────────────────────────────────────
+  clearInterval(timerInterval);
+  showModal({
+    icon   : '🎉',
+    iconBg : '#dcfce7',
+    title  : 'Jawaban Terkirim!',
+    sub    :
+      '<strong>' + (siswaAktif['nama'] || '') + '</strong><br>' +
+      'Nilai Anda: <span style="font-size:28px;font-weight:900;color:var(--success)">' + nilai + '</span>' +
+      '<br><small style="color:var(--muted)">' + benar + ' benar dari ' + total + ' soal</small>' +
+      '<br>' + statusLines.join('<br>'),
+    buttons: [{ label: 'Selesai', cls: 'success', action: () => location.reload() }],
+  });
 }
 
 /* ═════════════════════════════════════════════════════════
-   LOAD GAMBAR (proxy via GAS)
+   LOAD GAMBAR
 ═════════════════════════════════════════════════════════ */
 const imgCache = {};
 
@@ -1525,13 +1599,11 @@ function loadImagesOnCard() {
       img.style.minHeight = '';
       return;
     }
-    // Coba load langsung (untuk URL proxy GAS atau URL biasa)
     if (/^https?:\/\//i.test(rawUrl)) {
       img.src = rawUrl;
       img.removeAttribute('data-src');
       img.style.minHeight = '';
       img.onerror = () => {
-        // Jika gagal, coba ambil via proxyImage
         const fid = extractDriveId(rawUrl);
         if (fid) fetchProxyImage(img, rawUrl, fid);
       };
@@ -1613,13 +1685,6 @@ function showPage(id) {
   });
 }
 
-function esc(s) {
-  return String(s || '')
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
-    .replace(/\n/g,'<br>');
-}
-
-// escHtml: dipakai di renderQuestion - aman untuk innerHTML
 function escHtml(s) {
   return parseMath(
     String(s || '')
@@ -1629,21 +1694,10 @@ function escHtml(s) {
 }
 
 /* ═════════════════════════════════════════════════════════
-   PARSE MATH — konversi notasi spreadsheet ke HTML
-   Didukung:
-     2^2          → 2²        (pangkat)
-     x^(n+1)      → x^(n+1)  (pangkat ekspresi)
-     sqrt(x)      → √x        (akar kuadrat)
-     sqrt[3](x)   → ∛x        (akar pangkat n)
-     x_2          → x₂        (subscript)
-     x_(n+1)      → x_(n+1)   (subscript ekspresi)
-     1/2          → ½          (pecahan — hanya bilangan tunggal)
-     pi           → π, theta → θ, alpha → α, beta → β, dst.
+   PARSE MATH
 ═════════════════════════════════════════════════════════ */
 function parseMath(s) {
   if (!s) return s;
-
-  // 1. Simbol Yunani
   const greek = {
     'alpha':'α','beta':'β','gamma':'γ','delta':'δ','epsilon':'ε',
     'theta':'θ','lambda':'λ','mu':'μ','pi':'π','sigma':'σ',
@@ -1653,57 +1707,28 @@ function parseMath(s) {
   };
   s = s.replace(/\b(alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|sigma|omega|phi|psi|rho|nu|eta|tau|xi|zeta|Delta|Sigma|Omega|Lambda|Pi|Phi|Gamma|Theta)\b/g,
     (m) => greek[m] || m);
-
-  // 2. Simbol matematika umum
   s = s.replace(/\binf(inity)?\b/gi, '∞');
   s = s.replace(/<=/g, '≤').replace(/>=/g, '≥');
   s = s.replace(/!=/g, '≠');
   s = s.replace(/\+-/g, '±');
-
-  // 3. Pangkat DULU — sebelum sqrt, supaya isi sqrt ikut diproses
-  // base^(expr) — mis: (x-4)^2, x^(n+1)
   s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%\)]+)\^\(([^)]+)\)/g,
     (_, base, exp) => base + '<sup>' + exp + '</sup>');
-  // base^exp — mis: x^2, 10^6
   s = s.replace(/([a-zA-Z0-9\u03B1-\u03C9\u0391-\u03A9%\)]+)\^([a-zA-Z0-9\+\-\.]+)/g,
     (_, base, exp) => base + '<sup>' + exp + '</sup>');
-
-  // 4. Akar — SETELAH pangkat, sehingga isi sqrt sudah berisi <sup> yang benar
-  // Helper: ambil isi paling-dalam dari sqrt(...) dengan balancing kurung
-  function extractSqrtInner(str, startIdx) {
-    // startIdx = posisi '(' pertama setelah 'sqrt'
-    let depth = 0, i = startIdx, result = '';
-    for (; i < str.length; i++) {
-      if (str[i] === '(') { depth++; if (depth === 1) continue; }
-      else if (str[i] === ')') { depth--; if (depth === 0) break; }
-      if (depth > 0) result += str[i];
-    }
-    return { inner: result, end: i };
-  }
-
-  // sqrt[n](...) → ⁿ√...
   const nthRoots = {'2':'√','3':'∛','4':'∜'};
-  s = s.replace(/sqrt\[(\d+)\]\(/g, (match, n, offset, full) => {
-    // Tandai posisi untuk diproses di bawah — pakai placeholder sementara
-    return '\x00SQRTN:' + n + '\x00';
-  });
-  // Proses placeholder sqrtn
+  s = s.replace(/sqrt\[(\d+)\]\(/g, (match, n) => '\x00SQRTN:' + n + '\x00');
   s = s.replace(/\x00SQRTN:(\d+)\x00\(([^)]*(?:\([^)]*\)[^)]*)*)\)/g, (_, n, inner) => {
     const sym = nthRoots[n] || (n + '√');
     return '<span class="math-root">' + sym + '<span class="math-root-inner">' + inner + '</span></span>';
   });
-  // Bersihkan sisa placeholder jika ada
   s = s.replace(/\x00SQRTN:\d+\x00/g, '√');
-
-  // sqrt(...) dengan balancing kurung — tangani nested seperti sqrt((x-4)^2 + 16)
   let out = '';
-  let i = 0;
+  let i   = 0;
   while (i < s.length) {
     const sqIdx = s.indexOf('sqrt(', i);
     if (sqIdx === -1) { out += s.slice(i); break; }
     out += s.slice(i, sqIdx);
-    // Temukan kurung penutup yang seimbang
-    let depth = 0, j = sqIdx + 4, inner = ''; // sqIdx+4 = posisi '('
+    let depth = 0, j = sqIdx + 4, inner = '';
     for (; j < s.length; j++) {
       if (s[j] === '(') { depth++; if (depth === 1) continue; }
       else if (s[j] === ')') { depth--; if (depth === 0) break; }
@@ -1713,21 +1738,15 @@ function parseMath(s) {
     i = j + 1;
   }
   s = out;
-
-  // 5. Subscript — base_(expr) dan base_single
-  s = s.replace(/([a-zA-Z0-9]+)_\(([^)]+)\)/g,
-    (_, base, sub) => base + '<sub>' + sub + '</sub>');
-  s = s.replace(/([a-zA-Z0-9]+)_([a-zA-Z0-9]+)/g,
-    (_, base, sub) => base + '<sub>' + sub + '</sub>');
-
-  // 6. Pecahan sederhana: angka/angka (bukan URL)
+  s = s.replace(/([a-zA-Z0-9]+)_\(([^)]+)\)/g, (_, base, sub) => base + '<sub>' + sub + '</sub>');
+  s = s.replace(/([a-zA-Z0-9]+)_([a-zA-Z0-9]+)/g, (_, base, sub) => base + '<sub>' + sub + '</sub>');
   s = s.replace(/(?<![:/])\b(\d+)\/(\d+)\b(?![\d/])/g,
-    (_, num, den) =>
-      '<span class="math-frac"><sup>' + num + '</sup>⁄<sub>' + den + '</sub></span>'
-  );
-
+    (_, num, den) => '<span class="math-frac"><sup>' + num + '</sup>⁄<sub>' + den + '</sub></span>');
   return s;
 }
+
+// Expose fungsi untuk inline onclick di HTML
+window.currentIdx = 0;  // reaktif via getter jika perlu
 </script>
 </body>
 </html>
